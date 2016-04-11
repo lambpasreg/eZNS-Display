@@ -46,7 +46,7 @@ End If
 //Eco icon
 IfOnce LinkLCD1.Key_Press = 1 Then
  eco = Not eco
- End If
+End If
 
 //Fan Icon
 IfOnce LinkLCD1.Key_Press = 5 Then
