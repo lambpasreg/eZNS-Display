@@ -1,1 +1,70 @@
 
+Variable chauffage As Integer
+Variable clim As Integer
+Variable color As Integer
+Variable Occ As Integer
+Variable eco As Integer
+Variable fan As Integer
+
+outdoor = - 2
+
+LinkLCD1.Line_1 = outdoor
+LinkLCD1.Line_2 = Temperature_eZNS
+
+//Setpoints
+IfOnce PowerUp Then SliderCurrent = 22 End If
+SliderLocalControl = 1
+SliderIncrement = 0.1
+SliderMinValue = 15
+SlderMaxValue = 30
+SetPoint_eZNS = SliderCurrent
+
+Switch ( chauffage, Temperature_eZNS, SetPoint_eZNS - 0.2, SetPoint_eZNS)
+Switch ( clim, Temperature_eZNS, SetPoint_eZNS + 0.2, SetPoint_eZNS)
+
+//Occupancy
+IfOnce LinkLCD1.Key_Press = 2 Then
+  If Occ = 1 Then Occ = 2
+  ElseIf  Occ = 2 Then
+	Occ = 1
+  End If
+End If
+IfOnce 1 Then Occ = 1 End If
+
+//Backlight Color
+IfOnce LinkLCD1.Key_Press = 6 Then
+  If color > 7 Then
+	color = 1
+  Else
+	color = Limit (color + 1, 1, 8)
+  End If
+End If
+IfOnce LinkLCD1.Key_Press = 7 Then
+  color = 1
+End If
+
+//Eco icon
+IfOnce LinkLCD1.Key_Press = 1 Then
+ eco = Not eco
+ End If
+
+//Fan Icon
+IfOnce LinkLCD1.Key_Press = 5 Then
+  If fan > 5 Then
+	fan = 0
+  Else
+	fan = Limit (fan + 1, 0, 6)
+  End If
+End If
+
+//Icons
+LinkLCD1.Line_3_Units = 1
+LinkLCD1.Set = 1
+LinkLCD1.Heating = chauffage
+LinkLCD1.Cooling = clim
+LinkLCD1.Fan = fan
+LinkLCD1.Occupancy = Occ
+LinkLCD1.On = eco
+BacklightColor = color
+
+//Fin
