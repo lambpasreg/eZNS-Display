@@ -8,8 +8,9 @@ Variable fan As Integer
 
 outdoor = - 2
 
-LinkLCD1.Line_1 = outdoor
+//LinkLCD1.Line_1 = outdoor //line 1 not used
 LinkLCD1.Line_2 = Temperature_eZNS
+LinkLCD1.Line_3 = Setpoint_eZNS
 
 //Setpoints
 IfOnce PowerUp Then SliderCurrent = 22 End If
