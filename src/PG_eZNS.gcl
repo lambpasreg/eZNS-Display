@@ -59,7 +59,8 @@ IfOnce LinkLCD1.Key_Press = 5 Then
 End If
 
 //Icons
-LinkLCD1.Line_3_Units = 1
+LinkLCD1.Line_2_Units = 1  //0 = No Unit icons, 1 = º icon only, 2 = ºC, 3 = ºF, 4 = %
+LinkLCD1.Line_3_Units = 1  //0 = No Unit icons, 1 = º icon only, 2 = ºC, 3 = ºF, 4 = %, 5 = AM (not supported), 6 = PM (not supported), 7 = PPM,  8 = Lower humidity icon, 9 = % and lower humidity icon
 LinkLCD1.Set = 1
 LinkLCD1.Heating = chauffage
 LinkLCD1.Cooling = clim
