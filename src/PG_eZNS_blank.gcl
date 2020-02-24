@@ -1,1 +1,37 @@
 
+//eZNT sans affichage
+StickyArrow = 0
+SliderMode = 0
+SliderMin = 0
+SliderMax = 0
+SliderInc = 0
+SliderVal = 0
+SliderUnits = 0
+'Backlight Blue' = 0
+'Backlight Green' = 0
+'Backlight Red' = 0
+'Backlight OffIntensity' = 0
+'Backlight OnIntensity' = 0
+'Backlight Color' = 0
+'Backlight Timeout' = 0
+
+LocalLCD.Line2 = ""
+LocalLCD.Line2Units = 0
+LocalLCD.Line3 = ""
+LocalLCD.Line3Units = 0
+LocalLCD.BackLight = 0
+LocalLCD.Heating = 0
+LocalLCD.Cooling = 0
+LocalLCD.Humidity = 0
+LocalLCD.Fan = 0
+LocalLCD.Occupancy = 0
+LocalLCD.On = 0
+LocalLCD.Off = 0
+LocalLCD.Set = 0
+LocalLCD.Beeper = 0
+LocalLCD.Blink = 0
+LocalLCD.SunMoon = 0
+LocalLCD.Calibrate = 0
+LocalLCD.Time = 0
+LocalLCD.Minimum = 0
+LocalLCD.Maximum = 0
